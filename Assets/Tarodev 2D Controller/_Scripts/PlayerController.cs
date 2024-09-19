@@ -23,10 +23,7 @@ namespace TarodevController
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
 
-        public float speed;
-        private Vector3 movement;
-        private PlayerInput input;
-        private Transform playerTransform;
+        private PlayerInputSetting _playerInputSetting;
 
         #region Interface
 
@@ -42,20 +39,12 @@ namespace TarodevController
         {
             _rb = GetComponent<Rigidbody2D>();
             _col = GetComponent<CapsuleCollider2D>();
-            input = GetComponent<PlayerInput>();
-
-            playerTransform = GetComponent<Transform>();
-            PlayerMiddle.Instance.GetPlayer(playerTransform);
-
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
         }
 
         private void Start()
         {
-            input.actions["Move"].performed += OnMove;
-            input.actions["Move"].canceled += OnMove;
-            input.actions["Jump"].performed += OnJump;
-            input.actions["Jump"].canceled += OnJump;
+            _playerInputSetting = GetComponent<PlayerInputSetting>();
         }
         private void Update()
         {
@@ -63,23 +52,7 @@ namespace TarodevController
             GatherInput();
         }
 
-        private void OnMove(InputAction.CallbackContext context)
-        {
-            if (context.phase == InputActionPhase.Canceled)
-            {
-                movement = Vector3.zero;
-            }
-            else
-            {
-                var vector2 = context.ReadValue<Vector2>();
-                movement = new Vector3(vector2.x, vector2.y, 0);
-            }
-        }
 
-        private void OnJump(InputAction.CallbackContext context)
-        {
-            Debug.Log("11");
-        }
 
         private void GatherInput()
         {
@@ -87,7 +60,7 @@ namespace TarodevController
             {
                 JumpDown = UnityEngine.Input.GetButtonDown("Jump") || UnityEngine.Input.GetKeyDown(KeyCode.C),
                 JumpHeld = UnityEngine.Input.GetButton("Jump") || UnityEngine.Input.GetKey(KeyCode.C),
-                Move = new Vector2(movement.x, movement.y)
+                Move = new Vector2(_playerInputSetting.movement.x, _playerInputSetting.movement.y),
             };
 
             if (_stats.SnapInput)

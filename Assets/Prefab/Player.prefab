@@ -9908,6 +9908,7 @@ GameObject:
   - component: {fileID: 7169440763589933372}
   - component: {fileID: 3823316491590848729}
   - component: {fileID: 3819924944195908794}
+  - component: {fileID: 5639714146036941}
   m_Layer: 6
   m_Name: Player Controller
   m_TagString: Player
@@ -9944,7 +9945,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 05e6a06c5af93134ab98ff12e2c27265, type: 2}
-  speed: 0
 --- !u!50 &7169440763589933372
 Rigidbody2D:
   serializedVersion: 4
@@ -10093,6 +10093,21 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &5639714146036941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3598259794439974423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa23607cb7f4f943a4d4054f8fc6266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  movement: {x: 0, y: 0, z: 0}
+  isJump: 0
 --- !u!1 &3885955225249432494
 GameObject:
   m_ObjectHideFlags: 0
@@ -10118,7 +10133,7 @@ Transform:
   m_GameObject: {fileID: 3885955225249432494}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10199,7 +10214,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 9ec0ca269ec0b4f4fa12877c83d9dd88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59380d86c6778f44f9347129240e3b81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
