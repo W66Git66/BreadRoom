@@ -58,8 +58,8 @@ namespace TarodevController
         {
             _frameInput = new FrameInput
             {
-                JumpDown = UnityEngine.Input.GetButtonDown("Jump") || UnityEngine.Input.GetKeyDown(KeyCode.C),
-                JumpHeld = UnityEngine.Input.GetButton("Jump") || UnityEngine.Input.GetKey(KeyCode.C),
+                JumpDown = _playerInputSetting.isJumpDown,
+                JumpHeld = _playerInputSetting.isJumpHeld,
                 Move = new Vector2(_playerInputSetting.movement.x, _playerInputSetting.movement.y),
             };
 

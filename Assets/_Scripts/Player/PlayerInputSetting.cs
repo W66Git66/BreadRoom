@@ -7,7 +7,8 @@ public class PlayerInputSetting : MonoBehaviour
 {
     public float speed;
     [HideInInspector]public Vector3 movement;
-    [HideInInspector] public bool isJump;
+    [HideInInspector] public bool isJumpDown;
+    [HideInInspector] public bool isJumpHeld;
     private PlayerInput input;
     private Transform playerTransform;
 
@@ -23,10 +24,14 @@ public class PlayerInputSetting : MonoBehaviour
     {
         input.actions["Move"].performed += OnMove;
         input.actions["Move"].canceled += OnMove;
-        input.actions["Jump"].performed += OnJump;
-        input.actions["Jump"].canceled += OnJump;
+
     }
 
+    private void Update()
+    {
+        OnJumpDown();
+        OnJumpHeld();
+    }
     private void OnMove(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Canceled)
@@ -40,8 +45,20 @@ public class PlayerInputSetting : MonoBehaviour
         }
     }
 
-    private void OnJump(InputAction.CallbackContext context)
+    private void OnJumpHeld()
     {
-        isJump = context.ReadValueAsButton();
+        if(isJumpDown)
+        {
+            isJumpHeld = true;
+            if(input.actions["Jump"].WasReleasedThisFrame())
+            {
+                isJumpHeld = false;
+            }
+        }
+    }
+
+    private void OnJumpDown()
+    {
+        isJumpDown = input.actions["Jump"].WasPressedThisFrame();
     }
 }
