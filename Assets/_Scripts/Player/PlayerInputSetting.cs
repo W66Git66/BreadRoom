@@ -12,6 +12,8 @@ public class PlayerInputSetting : MonoBehaviour
     private PlayerInput input;
     private Transform playerTransform;
 
+    private int index;
+
     private void Awake()
     {
         input = GetComponent<PlayerInput>();
@@ -24,7 +26,6 @@ public class PlayerInputSetting : MonoBehaviour
     {
         input.actions["Move"].performed += OnMove;
         input.actions["Move"].canceled += OnMove;
-
     }
 
     private void Update()
