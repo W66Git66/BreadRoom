@@ -20,7 +20,7 @@ public class Disppear : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name==CollisionName)
+        if (collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(DisappearAndReappear());
         }
