@@ -1,12 +1,19 @@
 using UnityEngine;
 
-public class bobo: MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;           // 移动速度
-    public float jumpForce = 10f;          // 跳跃力量
+    //public float jumpForce = 10f;          // 跳跃力量
     public float slowFallDuration = 1f;    // 缓慢降落的最长时间
     public Vector2 slowFallScale = new Vector2(1.3f, 1.1f);  // 缓慢降落时角色的大小
-    public float fallMultiplier = 2.5f;    // 加速下坠的倍率
+    //public float fallMultiplier = 2.5f;    // 加速下坠的倍率
+
+    public float jumpVelocity = 7f;          // 跳跃的初始速度
+    //public LayerMask groundLayer;            // 地面层的图层掩码
+    //public Transform groundCheck;            // 检查地面接触的位置
+    //public float groundCheckRadius = 0.2f;   // 地面检测的小圆圈半径
+    public float fallMultiplier = 2.5f;      // 下降时的速度乘数，用于加快下落
+    public float lowJumpMultiplier = 2f;     // 轻按跳跃时的速度乘数，用于减少跳跃高度
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -30,12 +37,31 @@ public class bobo: MonoBehaviour
 
     void Update()
     {
+        Debug.Log("isGrounded:" + isGrounded);
         if (!isDead)
         {
             Move();
-            Jump();
             SlowFall();
-            AccelerateFall();
+            //AccelerateFall();
+            // 执行跳跃逻辑
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            {
+                Jump();
+                //isGrounded = false; // 重置跳跃输入
+                hasUsedSlowFall = false; // 每次跳跃重置缓慢降落使用状态
+            }
+
+            // 当角色处于上升或下降状态时，调整跳跃曲线
+            if (rb.velocity.y < 0)
+            {
+                // 下降时加速下落，模拟重力加速度
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
+            }
+            else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+            {
+                // 轻按空格键时减少上升速度，模拟小跳跃
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
+            }
         }
         else
         {
@@ -63,16 +89,20 @@ public class bobo: MonoBehaviour
         }
     }
 
-    // 控制跳跃
-    void Jump()
+    void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            isGrounded = false;
-            hasUsedSlowFall = false; // 每次跳跃重置缓慢降落使用状态
-        }
+
     }
+    // 控制跳跃
+    //void Jump()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+    //    {
+    //        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+    //        isGrounded = false;
+    //        hasUsedSlowFall = false; // 每次跳跃重置缓慢降落使用状态
+    //    }
+    //}
 
     // 控制缓慢降落
     void SlowFall()
@@ -102,13 +132,13 @@ public class bobo: MonoBehaviour
     }
 
     // 加速下坠
-    void AccelerateFall()
-    {
-        if (rb.velocity.y < 0 && !isSlowFalling) // 只有在下降并且没有缓慢降落时加速
-        {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        }
-    }
+    //void AccelerateFall()
+    //{
+    //    if (rb.velocity.y < 0 && !isSlowFalling) // 只有在下降并且没有缓慢降落时加速
+    //    {
+    //        rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+    //    }
+    //}
 
     // 检测是否在地面上
     private void OnCollisionEnter2D(Collision2D collision)
@@ -130,7 +160,6 @@ public class bobo: MonoBehaviour
         {
             isGrounded = true;
         }
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -140,7 +169,11 @@ public class bobo: MonoBehaviour
             isGrounded = false;
         }
     }
-
+    void Jump()
+    {
+        // 直接设置角色的垂直速度，使其跳跃
+        rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+    }
     // 处理死亡状态
     public void Die()
     {
