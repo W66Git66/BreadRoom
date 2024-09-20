@@ -5402,6 +5402,9 @@ MonoBehaviour:
   playerTransform:
   - {fileID: 0}
   - {fileID: 0}
+  virtualCamera: {fileID: 1493404816}
+  maxSize: 10
+  mainSize: 5
 --- !u!4 &1158320008
 Transform:
   m_ObjectHideFlags: 0
