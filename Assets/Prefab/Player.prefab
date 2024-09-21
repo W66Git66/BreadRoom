@@ -9703,7 +9703,7 @@ GameObject:
   - component: {fileID: 5618008757443754488}
   - component: {fileID: 8015258394023154574}
   - component: {fileID: 1899927360159250260}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Dash Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14533,7 +14533,7 @@ GameObject:
   - component: {fileID: 6077122625704587734}
   - component: {fileID: 6382551496133937258}
   - component: {fileID: 1852406264978854287}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DashRing Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19420,7 +19420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8557787565682246536}
   - component: {fileID: 1462877584548763037}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: TrailRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19564,7 +19564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4393347362262508090}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Dash Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24778,13 +24778,14 @@ GameObject:
   - component: {fileID: 3823316491590848729}
   - component: {fileID: 3819924944195908794}
   - component: {fileID: 5639714146036941}
-  m_Layer: 6
-  m_Name: Player Controller
+  - component: {fileID: 8218729948134605144}
+  m_Layer: 0
+  m_Name: Player_1 Controller
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7208820226007831556
 Transform:
   m_ObjectHideFlags: 0
@@ -24799,6 +24800,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7294380494261626576}
+  - {fileID: 6618960693032798765}
   m_Father: {fileID: 4081584167784494236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8775935155060121918
@@ -24814,6 +24816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 05e6a06c5af93134ab98ff12e2c27265, type: 2}
+  _grounded: 0
 --- !u!50 &7169440763589933372
 Rigidbody2D:
   serializedVersion: 4
@@ -24978,6 +24981,28 @@ MonoBehaviour:
   movement: {x: 0, y: 0, z: 0}
   isJumpDown: 0
   isJumpHeld: 0
+--- !u!114 &8218729948134605144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3598259794439974423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfacdf6722ab485428fa8072caff3dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheck: {fileID: 7488467214168308457}
+  checkRadius: 0.5
+  frontCheck: {fileID: 1441583085746853851}
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  WallSlidingSpeed: 3
+  xWallForce: 15
+  yWallForce: 20
+  wallJumpTime: 0.1
 --- !u!1 &3885955225249432494
 GameObject:
   m_ObjectHideFlags: 0
@@ -25037,7 +25062,7 @@ GameObject:
   - component: {fileID: 7640750928786983707}
   - component: {fileID: 2269065553316503177}
   - component: {fileID: 7249364675446732824}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25055,7 +25080,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7294380494261626576}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25143,7 +25168,7 @@ GameObject:
   - component: {fileID: 2168133827649147142}
   - component: {fileID: 1067177279902327068}
   - component: {fileID: 5826860952377233686}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Launch Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30031,7 +30056,7 @@ GameObject:
   - component: {fileID: 6638152562898590024}
   - component: {fileID: 3930950452662094213}
   - component: {fileID: 4001919813538939518}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Land Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34919,7 +34944,7 @@ GameObject:
   - component: {fileID: 7294380494261626576}
   - component: {fileID: 3811129534272265462}
   - component: {fileID: 3460494486864147344}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35065,6 +35090,37 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5d94063f45167b04ab62585e436da58c, type: 3}
   - {fileID: 8300000, guid: b5803c17557c59c40bf3a6d69cb46cb3, type: 3}
   - {fileID: 8300000, guid: 1876767bf7cbf284394dc3817af9593c, type: 3}
+--- !u!1 &4430377961167725341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7488467214168308457}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7488467214168308457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430377961167725341}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.037, y: -0.608, z: 0.078116536}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6618960693032798765}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4579891256501889986
 GameObject:
   m_ObjectHideFlags: 0
@@ -44856,7 +44912,7 @@ GameObject:
   - component: {fileID: 8297111299916217577}
   - component: {fileID: 4253416481817310181}
   m_Layer: 6
-  m_Name: Player Controller (1)
+  m_Name: Player_2 Controller
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44891,6 +44947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 05e6a06c5af93134ab98ff12e2c27265, type: 2}
+  _grounded: 0
 --- !u!50 &4216908043697437040
 Rigidbody2D:
   serializedVersion: 4
@@ -45066,7 +45123,7 @@ GameObject:
   - component: {fileID: 1722394380265540064}
   - component: {fileID: 5815621433722381225}
   - component: {fileID: 506260993402619129}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Double Jump Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49954,7 +50011,7 @@ GameObject:
   - component: {fileID: 8662353523210214682}
   - component: {fileID: 6349605392093603979}
   - component: {fileID: 3258912405872334753}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Jump Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59877,6 +59934,39 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &8214331243973883041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6618960693032798765}
+  m_Layer: 0
+  m_Name: CheckPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6618960693032798765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214331243973883041}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1441583085746853851}
+  - {fileID: 7488467214168308457}
+  m_Father: {fileID: 7208820226007831556}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8336195908935035816
 GameObject:
   m_ObjectHideFlags: 0
@@ -59888,7 +59978,7 @@ GameObject:
   - component: {fileID: 2566726046364397689}
   - component: {fileID: 502636060636134857}
   - component: {fileID: 5796891363896806068}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Move Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64716,7 +64806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6053290481441585535}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64743,6 +64833,37 @@ Transform:
   - {fileID: 5618008757443754488}
   - {fileID: 4393347362262508090}
   m_Father: {fileID: 7294380494261626576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8455316216629182502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1441583085746853851}
+  m_Layer: 0
+  m_Name: FrontCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1441583085746853851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8455316216629182502}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.617, y: -0.073, z: 0.078116536}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6618960693032798765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8862899534789709323
 GameObject:
