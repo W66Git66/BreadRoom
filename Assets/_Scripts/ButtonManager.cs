@@ -4,36 +4,35 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-    public GameObject DoorOpen;
-    public GameObject DoorClose;
+    public MovePlatform movePlatform;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision!=null) 
         {
             if(collision.gameObject.CompareTag("Player")|| collision.gameObject.CompareTag("Snow"))
             {
-                DoorClose.SetActive(false);
-                DoorOpen.SetActive(true);
+                movePlatform.ChangePosition();
             }
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void  OnTriggerExit2D(Collider2D collision)
     {
         if (collision != null)
         {
             if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Snow"))
             {
-                DoorClose.SetActive(true);
-                DoorOpen.SetActive(false);
+                movePlatform.ReturnPosition();
             }
         }
     }
+
     // Update is called once per frame
     void Update()
     {

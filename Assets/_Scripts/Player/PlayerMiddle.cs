@@ -11,12 +11,19 @@ public class PlayerMiddle : Singleton<PlayerMiddle>
     private Vector3 middlePosition;
 
     public CinemachineVirtualCamera virtualCamera;
+    public Camera mainCamera;
     public float maxSize;
-    public float mainSize;
+    public float minSize;
+    public float duration;
+    Vector2 worldPosLeftBottom;
+    Vector2 worldPosTopRight;
+    void Start()
+    {
+
+    }
     protected override void Awake()
     {
         base.Awake();
-        ChangeCameraSize();
     }
 
     protected override void OnDestroy()
@@ -25,7 +32,6 @@ public class PlayerMiddle : Singleton<PlayerMiddle>
     }
     private void Update()
     {
-        ChangeCameraSize();
     }
     private void LateUpdate()
     {
@@ -49,17 +55,50 @@ public class PlayerMiddle : Singleton<PlayerMiddle>
         else if(playerIndex==1)
         {
             middlePosition = playerTransform[0].position;
+            LimitPosition(playerTransform[0]);
         }
         else
         {
             middlePosition = (playerTransform[0].position+playerTransform[1].position)/2;
+            LimitPosition(playerTransform[0]);
+            LimitPosition(playerTransform[1]);
         }
     }
 
-    public void ChangeCameraSize()
+    /// <summary>
+    /// 将角色位置限制在屏幕内
+    /// </summary>
+    /// <param name="trNeedLimit">角色的transform</param>
+    public void LimitPosition(Transform trNeedLimit)
     {
-        
-        virtualCamera.m_Lens.OrthographicSize += Mathf.Lerp(0,5,0.1f);
+        worldPosLeftBottom = mainCamera.ViewportToWorldPoint(Vector2.zero);
+        worldPosTopRight = mainCamera.ViewportToWorldPoint(Vector2.one);
+        trNeedLimit.position = new Vector3(Mathf.Clamp(trNeedLimit.position.x, worldPosLeftBottom.x, worldPosTopRight.x),
+                                           Mathf.Clamp(trNeedLimit.position.y, worldPosLeftBottom.y, worldPosTopRight.y),
+                                           trNeedLimit.position.z);
     }
 
+     public IEnumerator ChangeToMaxCameraSize()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime+= Time.deltaTime;
+            virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(minSize, maxSize, elapsedTime/duration) ;
+            yield return null;
+        }
+        virtualCamera.m_Lens.OrthographicSize = maxSize;
+    }
+
+    public IEnumerator ChangeToMinCameraSize()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(maxSize, minSize, elapsedTime / duration);
+            yield return null;
+        }
+        virtualCamera.m_Lens.OrthographicSize = minSize;
+    }
 }

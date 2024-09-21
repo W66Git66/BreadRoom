@@ -18,10 +18,15 @@ public class PlayerInputSetting : MonoBehaviour
     {
         input = GetComponent<PlayerInput>();
 
+
+
         playerTransform = GetComponent<Transform>();
         PlayerMiddle.Instance.GetPlayer(playerTransform);
     }
-
+    private void OnEnable()
+    {
+        transform.position = new Vector3(-50, 3, 1);
+    }
     private void Start()
     {
         input.actions["Move"].performed += OnMove;
