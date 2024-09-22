@@ -44920,13 +44920,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5932293920868804553}
-  - component: {fileID: 366289952733290606}
   - component: {fileID: 4216908043697437040}
   - component: {fileID: 2647625846018089028}
   - component: {fileID: 8297111299916217577}
   - component: {fileID: 4253416481817310181}
   - component: {fileID: 2000535462609103569}
   - component: {fileID: 6757157732989826677}
+  - component: {fileID: 101618112063980072}
   m_Layer: 7
   m_Name: Player_2 Controller
   m_TagString: Player
@@ -44950,20 +44950,6 @@ Transform:
   - {fileID: 1391437132777284900}
   m_Father: {fileID: 4081584167784494236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &366289952733290606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5937137991454454200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f61c64124c8575748994f087b9dc1b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: d8d382f9c803cfe47b195e0474c4850a, type: 2}
-  _grounded: 0
 --- !u!50 &4216908043697437040
 Rigidbody2D:
   serializedVersion: 4
@@ -45140,7 +45126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0153250b12b9f4280ba6930b969795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 366289952733290606}
+  playerController: {fileID: 0}
   sprite: {fileID: 4117573907488123726}
   platformState: {fileID: 21300000, guid: 092c8db1bac9ce64ebf2d919c31f9636, type: 3}
   normalState: {fileID: 21300000, guid: cc46a502761a9a94a97cf365c1382f09, type: 3}
@@ -45192,6 +45178,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.51}
   m_EdgeRadius: 0
+--- !u!114 &101618112063980072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937137991454454200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61c64124c8575748994f087b9dc1b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stats: {fileID: 11400000, guid: d8d382f9c803cfe47b195e0474c4850a, type: 2}
+  _grounded: 0
 --- !u!1 &6022914391432925868
 GameObject:
   m_ObjectHideFlags: 0

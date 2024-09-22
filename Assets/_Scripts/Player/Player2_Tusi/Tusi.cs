@@ -6,7 +6,6 @@ using TarodevController;
 public class Tusi : MonoBehaviour
 {
     public PlayerController playerController;
-
     public SpriteRenderer sprite;
     public Sprite platformState;
     public Sprite normalState;

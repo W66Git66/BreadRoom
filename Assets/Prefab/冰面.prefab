@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6167911692256523737}
   - component: {fileID: 5292446293689402768}
-  - component: {fileID: 262154687502054044}
+  - component: {fileID: 8245827852987727091}
   m_Layer: 0
   m_Name: "\u51B0\u9762"
   m_TagString: Ground
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &262154687502054044
-PolygonCollider2D:
+--- !u!61 &8245827852987727091
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -117,7 +117,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.18378317, y: -0.29536504}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -127,28 +127,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2.3899999, y: -1}
-      - {x: 2.58, y: -0.84}
-      - {x: 2.6399999, y: -0.64}
-      - {x: 2.6399999, y: -0.26999998}
-      - {x: 2.56, y: -0.19}
-      - {x: 2.56, y: 0.25}
-      - {x: 2.51, y: 0.31}
-      - {x: 2.5, y: 0.32}
-      - {x: 1.77, y: 0.32}
-      - {x: 0.72999996, y: 0.29}
-      - {x: -1.35, y: 0.25}
-      - {x: -2.85, y: 0.22999999}
-      - {x: -2.97, y: 0.17}
-      - {x: -2.99, y: -0.04}
-      - {x: -2.98, y: -0.17999999}
-      - {x: -3.03, y: -0.22999999}
-      - {x: -3.03, y: -0.39}
-      - {x: -2.99, y: -0.53999996}
-      - {x: -2.73, y: -1.01}
-      - {x: -0.049999997, y: -1.01}
-      - {x: -0.04, y: -0.98999995}
-      - {x: 1.67, y: -1}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 5.534832, y: 1.4490484}
+  m_EdgeRadius: 0

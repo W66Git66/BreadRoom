@@ -12,8 +12,6 @@ public class ButtonManager : MonoBehaviour
     public float moveSpeed = 5f;
 
 
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision!=null) 

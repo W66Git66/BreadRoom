@@ -431,15 +431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df7e28ff281485d498c2c47482bd523a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pos_DoorClose: {fileID: 6451995387005882418}
-  Pos_DoorOpen: {fileID: 8309199924631706454}
+  movePlatform: {fileID: 0}
   target_DoorPos: {fileID: 0}
   moveSpeed: 5
-  Pos_ButtonOff: {fileID: 9132933611886460049}
-  Pos_buttonOn: {fileID: 5430395142118825298}
-  target_buttonPos: {fileID: 0}
-  Door: {fileID: 3960326676832360621}
-  Button: {fileID: 8924570583800429178}
 --- !u!1 &8977818426080557634
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,4 +37,9 @@ public class MovePlatform : MonoBehaviour
         }
         transform.position = targetPosition;
     }
+
+    private void Update()
+    {
+        Debug.Log("Position:"+transform.position);
+    }
 }
