@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3673506050943467669}
   - component: {fileID: 8856884589669383979}
   - component: {fileID: 2491323064675804815}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Dash Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4841,7 +4841,7 @@ GameObject:
   - component: {fileID: 1429496252446063745}
   - component: {fileID: 6386165205744948783}
   - component: {fileID: 8262072800687899920}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Move Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9669,7 +9669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 773911294451366590}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Dash Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9703,7 +9703,7 @@ GameObject:
   - component: {fileID: 5618008757443754488}
   - component: {fileID: 8015258394023154574}
   - component: {fileID: 1899927360159250260}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dash Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14533,7 +14533,7 @@ GameObject:
   - component: {fileID: 6077122625704587734}
   - component: {fileID: 6382551496133937258}
   - component: {fileID: 1852406264978854287}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DashRing Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19420,7 +19420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8557787565682246536}
   - component: {fileID: 1462877584548763037}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TrailRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19564,7 +19564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4393347362262508090}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dash Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19596,7 +19596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3552260605035943279}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19635,7 +19635,7 @@ GameObject:
   - component: {fileID: 6888448527910025857}
   - component: {fileID: 754748577850585688}
   - component: {fileID: 3997573279322208363}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Jump Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24524,7 +24524,7 @@ GameObject:
   - component: {fileID: 7727249526082786289}
   - component: {fileID: 4117573907488123726}
   - component: {fileID: 2497530754890250882}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24587,12 +24587,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 17f6a57c7c01143468cde6b3aa0b60df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc46a502761a9a94a97cf365c1382f09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 2.2, y: 2.16}
+  m_Size: {x: 0.6, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -24629,7 +24629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6031150453610160239}
   - component: {fileID: 808400938599353457}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: TrailRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24780,7 +24780,7 @@ GameObject:
   - component: {fileID: 5639714146036941}
   - component: {fileID: 8218729948134605144}
   - component: {fileID: 8692394355632503939}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player_1 Controller
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -24840,7 +24840,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -25076,7 +25076,7 @@ GameObject:
   - component: {fileID: 7640750928786983707}
   - component: {fileID: 2269065553316503177}
   - component: {fileID: 7249364675446732824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25139,12 +25139,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 59380d86c6778f44f9347129240e3b81, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1be11b02a2c319e488db7ebd60a63c7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.02}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -25182,7 +25182,7 @@ GameObject:
   - component: {fileID: 2168133827649147142}
   - component: {fileID: 1067177279902327068}
   - component: {fileID: 5826860952377233686}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Launch Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30070,7 +30070,7 @@ GameObject:
   - component: {fileID: 6638152562898590024}
   - component: {fileID: 3930950452662094213}
   - component: {fileID: 4001919813538939518}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Land Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34958,7 +34958,7 @@ GameObject:
   - component: {fileID: 7294380494261626576}
   - component: {fileID: 3811129534272265462}
   - component: {fileID: 3460494486864147344}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35113,7 +35113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7488467214168308457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35146,7 +35146,7 @@ GameObject:
   - component: {fileID: 8974417250339354517}
   - component: {fileID: 1694223112281098168}
   - component: {fileID: 1813073202087442711}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: DashRing Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40034,7 +40034,7 @@ GameObject:
   - component: {fileID: 4148189077785657883}
   - component: {fileID: 8295805929914133245}
   - component: {fileID: 8728502679721233108}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Land Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44927,7 +44927,7 @@ GameObject:
   - component: {fileID: 4253416481817310181}
   - component: {fileID: 2000535462609103569}
   - component: {fileID: 6757157732989826677}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Player_2 Controller
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -44986,7 +44986,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -45023,8 +45023,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12, y: -0.08}
-  m_Size: {x: 0.9, y: 1}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.4, y: 1.4}
   m_Direction: 0
 --- !u!114 &8297111299916217577
 MonoBehaviour:
@@ -45143,7 +45143,10 @@ MonoBehaviour:
   playerController: {fileID: 366289952733290606}
   sprite: {fileID: 4117573907488123726}
   platformState: {fileID: 21300000, guid: 092c8db1bac9ce64ebf2d919c31f9636, type: 3}
-  normalState: {fileID: 21300000, guid: 17f6a57c7c01143468cde6b3aa0b60df, type: 3}
+  normalState: {fileID: 21300000, guid: cc46a502761a9a94a97cf365c1382f09, type: 3}
+  _sprite: {fileID: 7727249526082786289}
+  platform: {x: 2.2, y: 0.6}
+  normal: {x: 0.6, y: 1.5}
 --- !u!61 &6757157732989826677
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45176,7 +45179,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.042759806, y: -0.21855032}
+  m_Offset: {x: 0, y: -0.45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -45187,7 +45190,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0409992, y: 0.56289935}
+  m_Size: {x: 1, y: 0.51}
   m_EdgeRadius: 0
 --- !u!1 &6022914391432925868
 GameObject:
@@ -45200,7 +45203,7 @@ GameObject:
   - component: {fileID: 1722394380265540064}
   - component: {fileID: 5815621433722381225}
   - component: {fileID: 506260993402619129}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Double Jump Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50088,7 +50091,7 @@ GameObject:
   - component: {fileID: 8662353523210214682}
   - component: {fileID: 6349605392093603979}
   - component: {fileID: 3258912405872334753}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jump Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54977,7 +54980,7 @@ GameObject:
   - component: {fileID: 1391437132777284900}
   - component: {fileID: 1770994119120060837}
   - component: {fileID: 4708415279689738379}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55134,7 +55137,7 @@ GameObject:
   - component: {fileID: 4103734569351878412}
   - component: {fileID: 5579204453586350577}
   - component: {fileID: 2467067341863069201}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Launch Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60020,7 +60023,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6618960693032798765}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CheckPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60055,7 +60058,7 @@ GameObject:
   - component: {fileID: 2566726046364397689}
   - component: {fileID: 502636060636134857}
   - component: {fileID: 5796891363896806068}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Move Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64883,7 +64886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6053290481441585535}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64920,7 +64923,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1441583085746853851}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrontCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64953,7 +64956,7 @@ GameObject:
   - component: {fileID: 2646995970433312870}
   - component: {fileID: 841969992130751895}
   - component: {fileID: 8080317188565735825}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Double Jump Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

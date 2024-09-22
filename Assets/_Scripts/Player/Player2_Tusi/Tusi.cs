@@ -10,6 +10,10 @@ public class Tusi : MonoBehaviour
     public SpriteRenderer sprite;
     public Sprite platformState;
     public Sprite normalState;
+    public Transform _sprite;
+
+    public Vector2 platform;
+    public Vector2 normal;
 
     private CapsuleCollider2D _capsuleCollider2D;
     private Rigidbody2D _rigidbody2D;
@@ -31,9 +35,14 @@ public class Tusi : MonoBehaviour
             tusiState = 1;
             _collider2D.enabled = true;
             playerController.enabled = false;
-            _rigidbody2D.bodyType = RigidbodyType2D.Static;
-            sprite.sprite = platformState;
             _capsuleCollider2D.enabled = false;
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _rigidbody2D.excludeLayers = 0;
+            _sprite.Translate(new Vector3(0,-0.45f,0));
+            gameObject.layer = 6;
+            sprite.sprite = platformState;
+            sprite.size = platform;
+            
         }
         //±ä»ØÍÂË¾
         else
@@ -41,9 +50,14 @@ public class Tusi : MonoBehaviour
             tusiState = 0;
             _collider2D.enabled = false;
             playerController.enabled = true;
-            _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
-            sprite.sprite = normalState;
             _capsuleCollider2D.enabled = true;
+            _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+            _rigidbody2D.excludeLayers = 8;
+            _sprite.Translate(new Vector3(0, 0.45f, 0));
+            gameObject.layer = 7;
+            sprite.sprite = normalState;
+            sprite.size=normal;
+            
         }
     }
 }
