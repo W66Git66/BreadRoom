@@ -82,6 +82,7 @@ namespace TarodevController
         {
             var runningTilt = _grounded ? Quaternion.Euler(0, 0, _maxTilt * _player.FrameInput.x) : Quaternion.identity;
             _anim.transform.up = Vector3.RotateTowards(_anim.transform.up, runningTilt * Vector2.up, _tiltSpeed * Time.deltaTime, 0f);
+            _anim.SetFloat("MoveDirection", _player.FrameInput.x);
         }
 
         private void OnJumped()
@@ -139,5 +140,6 @@ namespace TarodevController
         private static readonly int GroundedKey = Animator.StringToHash("Grounded");
         private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");
         private static readonly int JumpKey = Animator.StringToHash("Jump");
+        private static readonly int MoveKey = Animator.StringToHash("MoveDirection");
     }
 }

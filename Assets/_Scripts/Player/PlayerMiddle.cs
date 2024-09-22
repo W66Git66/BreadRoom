@@ -54,12 +54,12 @@ public class PlayerMiddle : Singleton<PlayerMiddle>
         }
         else if(playerIndex==1)
         {
-            middlePosition = playerTransform[0].position;
+            middlePosition = new Vector3(playerTransform[0].position.x,0,0);
             LimitPosition(playerTransform[0]);
         }
         else
         {
-            middlePosition = (playerTransform[0].position+playerTransform[1].position)/2;
+            middlePosition = new Vector3((playerTransform[0].position.x+playerTransform[1].position.x)/2,0,0);
             LimitPosition(playerTransform[0]);
             LimitPosition(playerTransform[1]);
         }
@@ -74,7 +74,7 @@ public class PlayerMiddle : Singleton<PlayerMiddle>
         worldPosLeftBottom = mainCamera.ViewportToWorldPoint(Vector2.zero);
         worldPosTopRight = mainCamera.ViewportToWorldPoint(Vector2.one);
         trNeedLimit.position = new Vector3(Mathf.Clamp(trNeedLimit.position.x, worldPosLeftBottom.x, worldPosTopRight.x),
-                                           Mathf.Clamp(trNeedLimit.position.y, worldPosLeftBottom.y, worldPosTopRight.y),
+                                           trNeedLimit.position.y,
                                            trNeedLimit.position.z);
     }
 

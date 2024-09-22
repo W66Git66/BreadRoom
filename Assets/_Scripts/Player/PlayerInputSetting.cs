@@ -12,13 +12,14 @@ public class PlayerInputSetting : MonoBehaviour
     private PlayerInput input;
     private Transform playerTransform;
 
+    private Tusi tusi;
+
     private int index;
 
     private void Awake()
     {
         input = GetComponent<PlayerInput>();
-
-
+        tusi = GetComponent<Tusi>();
 
         playerTransform = GetComponent<Transform>();
         PlayerMiddle.Instance.GetPlayer(playerTransform);
@@ -31,12 +32,15 @@ public class PlayerInputSetting : MonoBehaviour
     {
         input.actions["Move"].performed += OnMove;
         input.actions["Move"].canceled += OnMove;
+
     }
 
     private void Update()
     {
         OnJumpDown();
         OnJumpHeld();
+
+        OnChangeState();
     }
     private void OnMove(InputAction.CallbackContext context)
     {
@@ -66,5 +70,13 @@ public class PlayerInputSetting : MonoBehaviour
     private void OnJumpDown()
     {
         isJumpDown = input.actions["Jump"].WasPressedThisFrame();
+    }
+
+    private void OnChangeState()
+    {
+        if (input.actions["ChangeState"].WasPressedThisFrame())
+        {
+            tusi.ChangeState();
+        }
     }
 }
